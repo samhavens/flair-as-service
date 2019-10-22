@@ -1,0 +1,17 @@
+{
+    "num_processes": 3,
+    "_comment_num_processes": "not yet used",
+    "mode": "server",
+    "_comment_mode": "server or library",
+    "pipeline": {
+        "taggers": [
+            "ner-ontonotes-fast",
+            "chunk-fast"
+        ],
+        "_comment_taggers": "remove '-fast' if GPU available",
+        "classifiers": [
+            "en-sentiment"
+        ],
+        "word_embeddings": []
+    }
+}

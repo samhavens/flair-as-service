@@ -1,0 +1,56 @@
+{
+    "_comment": "see https://github.com/zalandoresearch/flair/blob/master/resources/docs/TUTORIAL_2_TAGGING.md",
+    "num_processes": 3,
+    "_comment_num_processes": "not yet used",
+    "mode": "server",
+    "_comment_mode": "server or library",
+    "pipeline": {
+        "taggers": [
+            "ner-ontonotes-fast",
+            "chunk-fast"
+        ],
+        "_comment_taggers": "remove '-fast' if GPU available",
+        "classifiers": [
+            "en-sentiment"
+        ],
+        "word_embeddings": [
+            "news-forward-fast",
+            "news-backward-fast"
+        ],
+        "_comment_word_embeddings": "if more than one, they will be stacked",
+        "embedding_type": "document",
+        "_comment_embedding_type": "can be 'word', document', or 'both'",
+        "pooling_strategy": {
+            "operation": "pool",
+            "_comment_operation": "can be pool or rnn",
+            "pool_options": {
+                "pooling": "mean",
+                "_comment_pooling": "can be mean, max, or min",
+                "fine_tune_mode": "linear",
+                "_comment_fine_tune_mode": "can be linear, non-linear, or none. Adds a FF layer after the embeddings."
+            },
+            "rnn_options": {
+                "hidden_size": 128,
+                "_comment_hidden_size": "the number of hidden states in the rnn.",
+                "rnn_layers": 1,
+                "_comment_rnn_layers": "the number of layers for the rnn.",
+                "reproject_words": true,
+                "_comment_reproject_words": "boolean value, indicating whether to reproject the token embeddings in a separate linear layer before putting them into the rnn or not.",
+                "reproject_words_dimension": null,
+                "_comment_reproject_words_dimension": "output dimension of reprojecting token embeddings. If None the same output dimension as before will be taken.",
+                "bidirectional": false,
+                "_comment_bidirectional": "boolean value, indicating whether to use a bidirectional rnn or not.",
+                "dropout": 0.5,
+                "_comment_dropout": "the dropout value to be used.",
+                "word_dropout": 0.0,
+                "_comment_word_dropout": "the word dropout value to be used, if 0.0 word dropout is not used.",
+                "locked_dropout": 0.0,
+                "_comment_locked_dropout": "the locked dropout value to be used, if 0.0 locked dropout is not used.",
+                "rnn_type": "LSTM",
+                "_comment_rnn_type": "one of 'GRU' or 'LSTM'",
+                "fine_tune": true,
+                "_comment_fine_tune": "should the embeddings be fine-tuned or kept static"
+            }
+        }
+    }
+}

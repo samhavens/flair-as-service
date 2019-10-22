@@ -1,0 +1,26 @@
+{
+    "python.pythonPath": "/Users/sh/q/repos/flair-as-service/venv/bin/python3.7",
+    "python.linting.enabled": true,
+    "python.linting.mypyEnabled": true,
+    "python.linting.mypyPath": "/anaconda3/bin/mypy",
+    "python.linting.mypyArgs": [
+        "--ignore-missing-imports",
+        "--namespace-packages",
+        "--follow-imports=silent",
+        "--show-column-numbers"
+    ],
+    "python.linting.pycodestylePath": "/anaconda3/bin/pycodestyle",
+    "python.linting.pylintEnabled": false,
+    "python.formatting.provider": "black",
+    "python.formatting.blackPath": "/anaconda3/bin/black",
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/*.pyc": true,
+        "**/__pycache__": true,
+        "**/.mypy_cache": true
+    },
+}
