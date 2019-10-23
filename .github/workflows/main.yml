@@ -1,0 +1,29 @@
+name: CI
+
+on:
+  push:
+    branches:
+    - master
+
+jobs:
+  dockerize:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v1
+    - name: Log in to Docker Hub
+      run: docker login -u ${{ secrets.DOCKERHUB_ID }} -p ${{ secrets.DOCKERHUB_PASS }}
+    - name: Build and push various tags
+      run: |
+        rm conf/config.json
+        cp conf/config_ner.json conf/config.json
+        docker build -t ${{ secrets.DOCKERHUB_ID }}/flair-as-service:en-ner .
+        docker push ${{ secrets.DOCKERHUB_ID }}/flair-as-service:en-ner
+        rm conf/config.json
+        cp conf/config_embedding.json conf/config.json
+        docker build -t ${{ secrets.DOCKERHUB_ID }}/flair-as-service:en-embedding .
+        docker push ${{ secrets.DOCKERHUB_ID }}/flair-as-service:en-embedding
+        rm conf/config.json
+        cp conf/config_full.json conf/config.json
+        docker build -t ${{ secrets.DOCKERHUB_ID }}/flair-as-service:en-full .
+        docker push ${{ secrets.DOCKERHUB_ID }}/flair-as-service:en-full
