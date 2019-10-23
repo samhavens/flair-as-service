@@ -1,4 +1,4 @@
-# flair as service (fas)
+# flair as service
 
 Run [flair](https://github.com/zalandoresearch/flair) (the NLP library by Zalando research) as a container, configure it with one JSON file, and get a REST API that responds in a compact format (relative to flair's default API shape).
 
