@@ -1,0 +1,19 @@
+{
+    "mode": "server",
+    "_comment_mode": "server or library (if library, embeddings stay on GPU)",
+    "pipeline": {
+        "taggers": [
+            "ner-ontonotes-fast",
+            "chunk-fast"
+        ],
+        "_comment_taggers": "remove '-fast' if GPU available",
+        "classifiers": [
+            "en-sentiment"
+        ],
+        "word_embeddings": [
+            "news-forward-fast",
+            "news-backward-fast"
+        ],
+        "embedding_type": "document"
+    }
+}

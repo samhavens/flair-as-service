@@ -1,0 +1,12 @@
+{
+    "mode": "server",
+    "pipeline": {
+        "taggers": [],
+        "classifiers": [],
+        "word_embeddings": [
+            "news-forward-fast",
+            "news-backward-fast"
+        ],
+        "embedding_type": "document"
+    }
+}

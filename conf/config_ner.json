@@ -1,0 +1,10 @@
+{
+    "mode": "server",
+    "pipeline": {
+        "taggers": [
+            "ner-ontonotes-fast"
+        ],
+        "classifiers": [],
+        "word_embeddings": []
+    }
+}
