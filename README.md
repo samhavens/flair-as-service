@@ -142,7 +142,7 @@ You should see:
 Different models come preloaded into flair-as-service, depending on Docker tag. For example:
 
 * `en-full` - provides english embeddings, NER, POS chunking, and sentiment
-* `en-embeddings` - provides english embeddings
+* `en-embedding` - provides english embeddings
 * `en-ner` - provides english NER
 
 However, don't go nuts trying to create the tag `de-embeddings-ner-pos` or something. Instead of using Docker's tags for that, use a `config.json` file. See the flair docs for the [list of possible embeddings](https://github.com/zalandoresearch/flair/blob/master/resources/docs/TUTORIAL_4_ELMO_BERT_FLAIR_EMBEDDING.md) or the [list of tagging models](https://github.com/zalandoresearch/flair/blob/master/resources/docs/TUTORIAL_2_TAGGING.md#list-of-pre-trained-sequence-tagger-models).
