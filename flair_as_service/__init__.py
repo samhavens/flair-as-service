@@ -199,7 +199,12 @@ class Configs:
 
         embedders = pipeline.get("word_embeddings", None)
         embedding_type = pipeline.get("embedding_type", "document")
-        pooling_strategy = pipeline.get("pooling_strategy", "pool")
+        pooling_strategy = pipeline.get("pooling_strategy", {
+            "operation": "pool",  # can be pool or rnn
+            "pool_options": {
+                "pooling": "mean",  # can be mean, max, or min
+                "fine_tune_mode": "linear",  # can be linear, non-linear, or none. Adds a FF layer after the embeddings
+            }})
 
         if embedders:
             self.pipeline = Pipeline(
