@@ -6,7 +6,7 @@ Run [flair](https://github.com/zalandoresearch/flair) (the NLP library by Zaland
 
 Try it out:
 
-`docker run -it -p 5000:5000 samhavens/flair-as-service:en-full` then POST or GET http://0.0.0.0:5000/?text=George%20Washington%20went%20to%20the%20store%20and%20chocked%20on%20a%20cherry%20pit
+`docker run -it -p 5000:5000 samhavens/flair-as-service:en-full` then POST or GET http://0.0.0.0:5000/?text=George%20Washington%20went%20to%20the%20store%20and%20choked%20on%20a%20cherry%20pit
 
 ## Intro
 
@@ -65,7 +65,7 @@ This section focuses on using the containerized version of flair-as-service, but
 docker run -it -p 5000:5000 samhavens/flair-as-service:en-full
 ```
 
-To test it out, send a cURL request or just open your browser to http://0.0.0.0:5000/?text=George%20Washington%20went%20to%20the%20store%20and%20chocked%20on%20a%20cherry%20pit
+To test it out, send a cURL request or just open your browser to http://0.0.0.0:5000/?text=George%20Washington%20went%20to%20the%20store%20and%20choked%20on%20a%20cherry%20pit
 
 You should see:
 
