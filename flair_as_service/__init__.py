@@ -199,7 +199,7 @@ class Configs:
 
         embedders = pipeline.get("word_embeddings", None)
         embedding_type = pipeline.get("embedding_type", "document")
-        pooling_strategy = pipeline.get("pooling_strategy", None)
+        pooling_strategy = pipeline.get("pooling_strategy", "pool")
 
         if embedders:
             self.pipeline = Pipeline(
