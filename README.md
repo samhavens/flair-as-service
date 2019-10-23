@@ -61,7 +61,7 @@ To test it out, send a cURL request or just open your browser to http://0.0.0.0:
 
 You should see:
 
-```json
+```jsonc
 [
   {
     "text": "George Washington went to the store and chocked on a cherry pit",
@@ -131,7 +131,7 @@ You should see:
       0.6297242045
     ],
     "embedding": [
-      (a 2048-dimensional vector that isn't included because it is too long)
+      # (a 2048-dimensional vector that isn't included because it is too long)
     ]
   }
 ]
@@ -149,7 +149,7 @@ However, don't go nuts trying to create the tag `de-embeddings-ner-pos` or somet
 
 For example, here is a minimal config for NER and sentiment analysis:
 
-```
+```json
 {
     "mode": "server",
     "pipeline": {
